@@ -1,0 +1,12 @@
+{
+  "name": "food-auth-app",
+  "displayName": "food-auth-app",
+  "expo": {
+    "name": "food-auth-app",
+    "slug": "food-auth-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
