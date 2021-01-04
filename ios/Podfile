@@ -3,6 +3,8 @@ require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 platform :ios, '10.0'
+permissions_path = '../node_modules/react-native-permissions/ios'
+pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
 
 target 'foodauthapp' do
   use_unimodules!
@@ -18,6 +20,10 @@ target 'foodauthapp' do
   # Note that if you have use_frameworks! enabled, Flipper will not work.
   #
    use_flipper!
+   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+   pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
    post_install do |installer|
      flipper_post_install(installer)
    end

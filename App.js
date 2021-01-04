@@ -1,21 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+import BottomNavigation from './components/bottom-navigation';
+import LoginScreen from './screens/loginScreen';
+import ProfileInfoScreen from './screens/profileInfoScreen'
+
+// const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+//implement to create side bar 
+ const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name = "Home" component = {BottomNavigation} />
+        <Drawer.Screen name = "Edit Profile" component = {ProfileInfoScreen} />
+        <Drawer.Screen name = "Sign Out" component = {LoginScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
+
+
+
