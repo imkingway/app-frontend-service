@@ -1,33 +1,33 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import HomeScreen from '../screens/homeScreen';
 import ProfileScreen from '../screens/profileScreen';
+import HistoryScreen from '../screens/historyScreen';
 import ScanScreen from '../screens/scanScreen';
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createMaterialBottomTabNavigator();
-const HomeStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
+const HistoryStack = createStackNavigator();
 const ScanStack = createStackNavigator();
 
 
 const BottomNavigation = () => {
     return (
         <Tab.Navigator
-          initialRouteName="Home"
+          initialRouteName="Profile"
           activeColor="#e91e63"
           style={{ backgroundColor: 'tomato' }}
         >
           <Tab.Screen
-            name="Home"
-            component={HomeStackScreen}
+            name="Profile"
+            component={ProfileStackScreen}
             options={{
-              tabBarLabel: 'Home',
+              tabBarLabel: 'Profile',
               tabBarIcon: ({ color }) => (
-                <Icon name="ios-home" color={color} size={26} />
+                <Icon name="ios-person" color={color} size={26} />
               ),
             }}
           />
@@ -37,17 +37,17 @@ const BottomNavigation = () => {
             options={{
               tabBarLabel: 'Scan',
               tabBarIcon: ({ color }) => (
-                <Icon name="ios-person" color={color} size={26} />
+                <Icon name="ios-scan" color={color} size={26} />
               ),
             }}
           />
           <Tab.Screen
-            name="Profile"
-            component={ProfileStackScreen}
+            name="History"
+            component={HistoryStackScreen}
             options={{
-              tabBarLabel: 'Updates',
+              tabBarLabel: 'History',
               tabBarIcon: ({ color }) => (
-                <Icon name="ios-home" color={color} size={26} />
+                <Icon name="ios-albums" color={color} size={26} />
               ),
             }}
           />
@@ -57,11 +57,11 @@ const BottomNavigation = () => {
 
 export default BottomNavigation;
 
-//implement to create home stack 
-const HomeStackScreen = ({navigation}) => {
+//implement to create profile stack 
+const ProfileStackScreen = ({navigation}) => {
     return(
-      <HomeStack.Navigator>
-        <HomeStack.Screen name = "Home" component = {HomeScreen} 
+      <ProfileStack.Navigator>
+        <ProfileStack.Screen name = "Profile" component = {ProfileScreen} 
         options = {{
           headerLeft: () => (
             <Icon.Button name= 'ios-menu' 
@@ -71,16 +71,16 @@ const HomeStackScreen = ({navigation}) => {
             ></Icon.Button>
           )}
         }/>
-      </HomeStack.Navigator>
+      </ProfileStack.Navigator>
     )
   }
   
   //implement to create profile stack 
-  const ProfileStackScreen = ({}) => {
+  const HistoryStackScreen = ({}) => {
     return(
-    <ProfileStack.Navigator>
-      <ProfileStack.Screen name = "Profile" component = {ProfileScreen} />
-    </ProfileStack.Navigator>
+    <HistoryStack.Navigator>
+      <HistoryStack.Screen name = "History" component = {HistoryScreen} />
+    </HistoryStack.Navigator>
     )
   }
 

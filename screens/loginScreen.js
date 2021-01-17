@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 const LoginPage = ({navigation}) => {
-  const [ text, setText ] = useState('');
+  const [text, setText] = useState('');
   return (
     <View style={ style.container }>
 
@@ -15,7 +15,6 @@ const LoginPage = ({navigation}) => {
       onChangeText = { text => setText(Text) }
       defaultValue = { text } 
       />
-
       <TextInput style = { style.inputText }
       secureTextEntry
       placeholder = "Password" 
@@ -24,9 +23,8 @@ const LoginPage = ({navigation}) => {
       />
 
       <View style = { style.buttonContainer }>
-
         <TouchableOpacity style = { style.button }
-        onPress = { ()=> alert('Hello World') }>
+        onPress = { ()=> navigation.navigate('profileScreen') }>
           <Text style = { style.buttonText }>Signin</Text>
         </TouchableOpacity>
 

@@ -1,23 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import * as React from 'react';
+import { Button } from 'react-native-paper';
+import { 
+  StyleSheet,
+  Text, 
+  View, 
+  TextInput, 
+  TouchableOpacity,
+  StatusBar, 
+  KeyboardAvoidingView
+} from 'react-native';
+
+export default SignUpPage;
 
 const SignUpPage = () => {
-  const [ text, setText ] = useState('');
   return (
     <View style={ style.container }>
-
       <StatusBar style="auto" />
-
       <TextInput 
       style = { style.inputText }
-      placeholder = "Enter Your Username" 
+      theme = {{color:{primary:"blue"}}}
+      label = 'Full Name' 
+      mode = "outline"
       onChangeText = { text => setText(Text) }
       defaultValue = { text } 
       />
 
       <TextInput style = { style.inputText }
-      placeholder = "Enter Your Gmail" 
+      label = 'Email' 
+      mode = "outline"
       onChangeText = { text => setText(Text) }
       defaultValue = { text } 
       />
@@ -48,8 +58,6 @@ const SignUpPage = () => {
   );
 }
 
-export default SignUpPage;
-
 const style = StyleSheet.create({
   container: {
     flex: 1,
@@ -70,25 +78,31 @@ const style = StyleSheet.create({
     marginTop: 20,
   },
   inputText:{
-    backgroundColor: "rgba(233,233,233,1)",
-    borderWidth: 0,
-    borderColor: "#92ACA7",
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 5,
-    shadowOpacity: 0.01,
-    shadowRadius: 0,
-    width: 240,
-    height: 48,
-    padding: 10
+    marginLeft: 18,
+    marginRight: 18,
+    marginTop: 18,
+    // backgroundColor: "rgba(233,233,233,1)",
+    // borderWidth: 0,
+    // borderColor: "#92ACA7",
+    // shadowColor: "rgba(0,0,0,1)",
+    // shadowOffset: {
+    //   width: 3,
+    //   height: 3
+    // },
+    // elevation: 5,
+    // shadowOpacity: 0.01,
+    // shadowRadius: 0,
+    // width: 240,
+    // height: 48,
+    // padding: 10
   },
   buttonText:{
     fontSize: 20,
     textAlign: "center",
     marginTop: 10,
   },
+  theme:{
+    color: "blue"
+  }
 });
 

@@ -1,32 +1,20 @@
 import React from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View style={ styles.screen }>
+      <Text> Display Profile </Text>
+      <Text> FULL NAME :</Text>
+      <Text> EMAIL : </Text>
+      <Text> USERNAME : </Text>
+      <Text> PASSWORD : </Text>
 
-const ProfileScreen = ({navigation}) => {
-    return (
-      <View style={ styles.screen }>
-        <Text>Profile</Text>
-        <Button 
-        title = "Go to details screen again"
-        onPress= {() => navigation.push("Details")}
-        />
-        <Button 
-        title = "Go to Home"
-        onPress= {() => navigation.push("Home")}
-        />
-        <Button 
-        title = "Go back"
-        onPress= {() => navigation.goBack()}
-        />
-        <Button 
-        title = "Go to the first screen"
-        onPress= {() => navigation.popToTop()}
-        />
-      </View>
-    );
-}
-
-export default ProfileScreen;
+      <Text> UPDATE BUTTON</Text>
+    </View>
+  );
+      
+};
 
 const styles = StyleSheet.create({
     screen: {
@@ -35,4 +23,5 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
 });
-  
+
+export default HomeScreen;
