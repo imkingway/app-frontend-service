@@ -13,8 +13,9 @@ const HomeScreen = ({ navigation }) => {
       <Text> UPDATE BUTTON</Text>
     </View>
   );
-      
 };
+
+export default HomeScreen;
 
 const styles = StyleSheet.create({
     screen: {
@@ -24,4 +25,3 @@ const styles = StyleSheet.create({
     },
 });
 
-export default HomeScreen;
